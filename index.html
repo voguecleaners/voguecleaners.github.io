@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vogue Cleaners - Pristine Dry Cleaning, On Your Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        :root {
+            --teal: #069494;
+            --teal-light: #0ab3b3;
+            --teal-dark: #047a7a;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #2c3e50;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--teal);
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-main {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--teal);
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        .cta-button {
+            background: var(--teal);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--teal-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--teal);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            color: var(--white);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .secondary-button:hover {
+            background: var(--white);
+            color: var(--teal);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto 2rem;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--teal);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid var(--teal);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Band */
+        .cta-band {
+            background: var(--teal);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-band h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-band p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Hours & Location */
+        .hours-location {
+            padding: 4rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .hours-card, .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .hours-card h3, .contact-card h3 {
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-location {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-location:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .location-name {
+            font-weight: bold;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Contact Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--teal);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background: var(--teal);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--teal-dark);
+        }
+
+        /* Carousel Styles */
+        .carousel-section {
+            padding: 4rem 2rem 2rem;
+            background: var(--white);
+        }
+
+        .carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            background: var(--teal);
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--teal);
+            transition: all 0.3s;
+        }
+
+        .carousel-nav:hover {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--teal);
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .carousel-dot.active {
+            opacity: 1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .carousel-image {
+                height: 300px;
+            }
+            
+            .carousel-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-category h3 {
+            color: var(--teal);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--teal);
+            padding-bottom: 0.5rem;
+        }
+
+        .service-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: var(--dark-gray);
+        }
+
+        .service-category li:last-child {
+            border-bottom: none;
+        }
+
+        .service-category li:hover {
+            color: var(--teal);
+            cursor: default;
+        }
+
+        /* About Page Styles */
+        .about-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+            overflow-y: auto;
+        }
+
+        .about-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .about-close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--teal);
+            background: none;
+            border: none;
+        }
+
+        .about-content h2 {
+            color: var(--teal);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .about-content p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                margin: 10% auto;
+                padding: 2rem;
+                width: 95%;
+            }
+            
+            .about-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .services-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto 3rem;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-main">Vogue & Caldaron</div>
+                <div class="logo-subtitle">Quality Dry Cleaning</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="openAboutPage()">About</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pristine Dry Cleaning, On Your Schedule</h1>
+            <img src="Pic11b.jpg" alt="Professional dry cleaning service" class="hero-image">
+            <p>Professional dry cleaning services, eco-friendly solvents, and affordable service. Your clothes deserve the best care.</p>
+            <div class="hero-buttons">
+                <a href="tel:650-967-3954" class="secondary-button">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <img src="Pic3.jpg" alt="Dry cleaning services" class="services-image">
+            <p class="section-subtitle">We provide comprehensive dry cleaning and laundry services with attention to detail and care for your garments. From everyday items to delicate fabrics, we handle it all with professional expertise.</p>
+            
+            <div class="services-list">
+                <div class="service-category">
+                    <h3>Dry Cleaning Services</h3>
+                    <ul>
+                        <li>Dry Cleaning</li>
+                        <li>Formal Wear</li>
+                        <li>Leather Cleaning</li>
+                        <li>Delicates</li>
+                        <li>Comforters</li>
+                        <li>Pants & Jeans</li>
+                        <li>Eco-friendly/Green Washing</li>
+                        <li>Follow Care Label Instructions</li>
+                    </ul>
+                </div>
+                
+                <div class="service-category">
+                    <h3>Alteration Services</h3>
+                    <ul>
+                        <li>Bridesmaid Dress Alterations</li>
+                        <li>Children's Clothing Alterations</li>
+                        <li>Resizing Services</li>
+                        <li>Dress Alterations</li>
+                        <li>Formal Wear Alterations</li>
+                        <li>Hemming Services</li>
+                        <li>Jeans/Denim Alterations</li>
+                        <li>Leather Alterations</li>
+                        <li>Clothing Alterations</li>
+                        <li>Pant & Trouser Alterations</li>
+                        <li>Shirt & Blouse Alterations</li>
+                    </ul>
+                </div>
+                
+                <div class="service-category">
+                    <h3>Repair & Care Services</h3>
+                    <ul>
+                        <li>Mending Services</li>
+                        <li>Garment Repair Services</li>
+                        <li>Stain Removal</li>
+                        <li>Patching Services</li>
+                        <li>Ironing</li>
+                        <li>Wash & Fold</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Vogue Cleaners?</h2>
+            <p class="section-subtitle">We're committed to providing exceptional service with attention to detail and convenience you can count on.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Eco-Friendly Solvents</h3>
+                    <p>Safe, non-toxic cleaning solutions that protect your clothes and the environment</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👗</div>
+                    <h3>Professional Bridesmaid Dress Alterations</h3>
+                    <p>Expert tailoring and alterations for bridesmaid dresses with attention to detail and perfect fit</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Expert Stain Removal</h3>
+                    <p>Specialized techniques to remove even the toughest stains</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+        <div class="container">
+            <h2>Ready for Vogue Cleaners Service?</h2>
+            <p>Call us today and experience the difference professional care makes for your garments.</p>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="section-title">Our Facility</h2>
+            <p class="section-subtitle">Take a look at our state-of-the-art dry cleaning facility</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="Pic1.jpg" alt="Dry cleaning facility with automated conveyor system" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Pic8.jpg" alt="Professional dry cleaning facility" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Pic3.jpg" alt="Quality control and garment care" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Pic7.jpg" alt="Modern dry cleaning operations" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Pic5a.jpg" alt="Clean and organized facility" class="carousel-image">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Pic6.jpg" alt="Professional garment care" class="carousel-image">
+                    </div>
+                </div>
+                
+                <button class="carousel-nav carousel-prev" onclick="moveCarousel(-1)">‹</button>
+                <button class="carousel-nav carousel-next" onclick="moveCarousel(1)">›</button>
+            </div>
+            
+            <div class="carousel-dots">
+                <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                <span class="carousel-dot" onclick="goToSlide(4)"></span>
+                <span class="carousel-dot" onclick="goToSlide(5)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section class="hours-location" id="contact">
+        <div class="container">
+            <h2 class="section-title">Hours & Location</h2>
+            <p class="section-subtitle">Visit us or call for professional dry cleaning services</p>
+            
+            <div class="info-grid">
+                <div class="hours-card">
+                    <h3>Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday</span><span>8:30 AM - 6:30 PM</span></li>
+                        <li><span>Saturday</span><span>9:00 AM - 5:00 PM</span></li>
+                        <li><span>Sunday</span><span>Closed</span></li>
+                    </ul>
+                    
+                    <br>
+                    
+                    <div class="special-hours">
+                        <div>Upcoming Special Hours</div>
+                        <ul class="special-hours-list">
+                            <li>Mon, Sep 1, 2025 - Closed</li>
+                            <li>Thu, Nov 27, 2025 - Closed</li>
+                            <li>Fri, Nov 28, 2025 - Closed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-location">
+                        <div class="location-name">Vogue Cleaners</div>
+                        <ul class="contact-info">
+                            <li> 595 Escuela Ave<br>Mountain View, CA 94040</li>
+                            <li>📞 <a href="tel:650-967-3954">(650) 967-3954</a></li>
+                            <li>️ <a href="https://maps.google.com" target="_blank">Get Directions</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-location">
+                        <div class="location-name">Calderon Cleaners</div>
+                        <ul class="contact-info">
+                            <li> 693 Calderon Avenue<br>Mountain View, CA 94041</li>
+                            <li>📞 <a href="tel:650-961-3444">(650) 961-3444</a></li>
+                            <li>️ <a href="https://maps.google.com" target="_blank">Get Directions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vogue Cleaners</h3>
+                    <p>Professional dry cleaning services with a commitment to quality and convenience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Dry Cleaning</a></li>
+                        <li><a href="#services">Wash & Fold</a></li>
+                        <li><a href="#services">Alterations</a></li>
+                        <li><a href="#services">Stain Removal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="openAboutPage()">About Us</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#policies">Policies</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Vogue Cleaners. All rights reserved.</p>
+                <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Book Your Service</h2>
+            <form class="contact-form" onsubmit="submitForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone" required>
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="dry-cleaning">Dry Cleaning</option>
+                    <option value="wash-fold">Wash & Fold</option>
+                    <option value="alterations">Alterations</option>
+                    <option value="stain-treatment">Stain Treatment</option>
+                </select>
+                <textarea placeholder="Special Instructions (Optional)" rows="4"></textarea>
+                <button type="submit">Schedule Pickup</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Page Modal -->
+    <div id="aboutPage" class="about-page">
+        <div class="about-content">
+            <button class="about-close" onclick="closeAboutPage()">&times;</button>
+            <h2>About Vogue Cleaners</h2>
+            <p>At Vogue Cleaners, it is our objective to become a leader in our market by providing affordable, quality service and customer care. We use new products that are Eco-friendly, exceeding our customers' expectations. Don't worry, we still stick to some old(but good) methods as well. But most importantly we put quality and pride to everything we do, and we will.</p>
+            
+            <p>Our specialties are wedding gowns, anything fabric from leather to silk, wash and fold, laundry, comforters, blankets, all sorts of alterations and more. We do not charge extra for one day/earlier service, because we understand how busy everyone is.</p>
+            
+            <p>We will continuously improve all of our innovative processes to provide innovation that increases satisfaction, quality and value for our customers. We pride ourselves in maintaining our commitment to our customers and the community while providing a safe, enjoyable and environmentally responsible workplace for our employees.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Contact modal functions
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form submission
+        function submitForm(event) {
+            event.preventDefault();
+            alert('Thank you! We\'ll contact you soon to confirm your pickup.');
+            closeContactModal();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.background = '#ffffff';
+            }
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const track = document.querySelector('.carousel-track');
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            moveCarousel(1);
+        }, 5000);
+
+        // About page functions
+        function openAboutPage() {
+            document.getElementById('aboutPage').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAboutPage() {
+            document.getElementById('aboutPage').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close about page when clicking outside
+        document.getElementById('aboutPage').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeAboutPage();
+            }
+        });
+    </script>
+</body>
+</html>
